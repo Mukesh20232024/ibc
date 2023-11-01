@@ -1,0 +1,9 @@
+#rotate
+{
+    position: relative;
+
+    & > span
+    {
+        position: absolute;
+    }
+}

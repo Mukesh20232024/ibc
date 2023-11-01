@@ -1,0 +1,28 @@
+/* Common styles for the menus */
+
+.menu {
+    margin: 0px auto;
+    width: 170px;
+}
+
+.menu__item {
+    line-height: 1;
+    position: relative;
+    display: block;
+    margin: 1em 0;
+    outline: none;
+}
+
+.menu__item-name,
+.menu__item-label {
+    position: relative;
+    display: inline-block;
+}
+
+.menu__item-name {
+    font-size: 1.25em;
+}
+
+.menu__item-label {
+    margin: 0 0 0 0.5em;
+}
