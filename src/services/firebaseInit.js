@@ -5,7 +5,7 @@ import "firebase/compat/firestore";
 import 'firebase/compat/auth';
 
 import { createContext, useContext } from 'react';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 
 const FirebaseContext = createContext(null);
 
@@ -57,7 +57,10 @@ export const FirebaseProvider = (props) => {
 
   const signinUserWithEmailAndPass = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
-  return <FirebaseContext.Provider value={{ signupUserWithEmailAndPassword ,signinUserWithEmailAndPass}}>
+
+  const sendPwdResetEmail = (email) => sendPasswordResetEmail(auth, email);
+
+  return <FirebaseContext.Provider value={{ signupUserWithEmailAndPassword ,signinUserWithEmailAndPass,sendPwdResetEmail}}>
     {props.children}
   </FirebaseContext.Provider>
 };
